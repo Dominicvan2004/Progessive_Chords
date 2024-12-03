@@ -1,0 +1,245 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #2e3b4e;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+.nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav li {
+    margin-right: 20px;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.header-right button {
+    background-color: #3b4f67;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.header-right button:hover {
+    background-color: #2e3b4e;
+}
+
+/* Layout */
+main {
+    display: flex;
+    margin: 20px;
+    justify-content: space-between;
+}
+
+.sidebar {
+    width: 20%;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h2 {
+    margin-bottom: 15px;
+	text-align : center;
+    font-size: 22px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 5;
+text-align: center;
+font-size: 18px;
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #333;
+}
+
+
+.main-content {
+	padding: 15px;
+    width: 75%;
+}
+.main-content h2{
+margin-bottom: 10px;
+}
+
+.sorting {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.sorting label {
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.sorting select {
+    padding: 5px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.album-card {
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.album-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.album-card p {
+    margin-top: 15px;
+    font-size: 16px;
+}
+.event-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.event-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.event-card p {
+    font-size: 1.1em;
+    margin: 5px 0;
+}
+
+.event-card .event-button {
+    background-color: #3b4f67;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+.event-card .event-button:hover {
+    background-color: #2e3b4e;
+}
+
+
+.cart {
+    width:100%;
+    display: block; /* Or other layout, like flex or grid */
+    text-align: left; /* Aligns inline content to the left */
+    padding: 15px;
+
+}.cart-album-card {
+    background-color: white;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    height: 150px;
+    margin-bottom: 20px;
+    display: block;
+    clear: both; /* Ensures it behaves as a block element */
+}
+
+.cart-album-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    margin-right: 10px;
+    float: left; /* Aligns the image to the left */
+}
+
+.cart-album-card div {
+    margin: 0 5px; /* Space between text and buttons */
+    display: inline-block; /* Allows the text block to align to the right of the image */
+    vertical-align: top; /* Ensures the text stays aligned with the top of the image */
+}
+
+.cart-album-card p {
+    font-size: 14px;
+    color: #333;
+    margin: 5px 0;
+}
+
+.cart-album-card button {
+    background-color: #3b4f67;
+    color: white;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.cart-album-card button:hover {
+    background-color: #2e3b4e;
+}
+
+.cart-album-card span {
+    font-size: 16px;
+    margin: 0 10px;
+}
+
+
+/* Footer */
+footer {
+    background-color: #2e3b4e;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
