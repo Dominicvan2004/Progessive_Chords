@@ -11,35 +11,91 @@
         <h1>Progressive Chords</h1>
         <nav class="nav">
             <ul>
-                <li><a href="#events">Upcoming Events</a></li>
-                <li><a href="#store-info">Store Info</a></li>
+                <li><a href="events.html">Upcoming Events</a></li>
+                <li><a href="store-info.html">Store Info</a></li>
             </ul>
         </nav>
         <div class="header-right">
-            <button>Cart</button>
+            <button title="Click to add to cart">Cart</button>
             <button>Account</button>
         </div>
     </header>
+
     <main>
         <aside class="sidebar">
             <ul>
-                <li><a href="#events">Upcoming Events</a></li>
-                <li><a href="#store-info">Store Info</a></li>
+                <li><a href="events.html">Upcoming Events</a></li>
+                <li><a href="store-info.html">Store Info</a></li>
             </ul>
         </aside>
-        <table class = "table-single">
-            <tr>
-                <th><h2>Album Name</h2></th>
-            </tr>
-            <tr>
-                <td><img src="Magdalena Bay - Imaginal Disk, Cover art - Copy.webp" alt="Album Cover">
-                <p>Availability: In Stock</p>
-                <p>Description: music album</p>
-                <button>Add to Cart</button>
-                <button>Reviews</button>
-                <button>Format of Media</button></td> 
-            </tr>
-        </table>
+
+        <section class="album-details">
+            <table class="table-single">
+                <tr>
+                    <th><h2>Album Name</h2></th>
+                </tr>
+                <tr>
+                    <td><img id="album-cover" src="" alt="Album Cover"></td>
+                </tr>
+                <tr>
+                    <td id="album-name">Album Name</td>
+                </tr>
+                <tr>
+                    <td id="album-artist">Artist Name</td>
+                </tr>
+                <tr>
+                    <td id="album-description">Description: </td>
+                </tr>
+                <tr>
+                    <td id="album-price">Price: </td>
+                </tr>
+                <tr>
+                    <td><button>Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td><button>Reviews</button></td>
+                </tr>
+                <tr>
+                    <td><a id="artist-link" href="#" target="_blank"><button>More about Album</button></a></td>
+                </tr>
+                <tr>
+                    <td><button>Format of Media</button></td>
+                </tr>
+            </table>
+        </section>
+
     </main>
+
+    <footer>
+        <p>&copy; 2024 Progressive Chords | Last Updated: <span id="lastUpdated"></span></p>
+    </footer>
+
+    <script>
+        window.onload = function() {
+            const params = new URLSearchParams(window.location.search);
+            const albumName = params.get('name');
+            const albumArtist = params.get('artist');
+            const albumDescription = params.get('description');
+            const albumImage = params.get('image');
+            const albumPrice = params.get('price');
+
+            document.getElementById('album-cover').src = albumImage;
+            document.getElementById('album-cover').alt = albumName;
+            document.getElementById('album-name').textContent = albumName;
+            document.getElementById('album-artist').textContent = `Artist: ${albumArtist}`;
+            document.getElementById('album-description').textContent = `Description: ${albumDescription}`;
+            document.getElementById('album-price').textContent = `Price: $${albumPrice}`;
+            const formattedAlbum = albumName ? albumName.replace(/ /g, "_") : "";
+            document.getElementById('artist-link').href = `https://en.wikipedia.org/wiki/${formattedAlbum}`;
+
+            console.log('Wikipedia URL:', `https://en.wikipedia.org/wiki/${formattedAlbum}`);  // to ensure wiki link is right
+            console.log(albumImage);  // to ensure img link is right
+
+            document.body.style.backgroundImage = `url('${albumImage}')`; // Set the background
+            document.body.style.opacity = 50; 
+
+            document.getElementById('lastUpdated').textContent = document.lastModified;
+        }
+    </script>
 </body>
 </html>
