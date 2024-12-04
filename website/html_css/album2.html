@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progressive Chords - Album Details</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Progressive Chords</h1>
+        <nav class="nav">
+            <ul>
+                <li><a href="events.html">Upcoming Events</a></li>
+                <li><a href="store-info.html">Store Info</a></li>
+            </ul>
+        </nav>
+        <div class="header-right">
+            <button>Cart</button>
+            <button>Account</button>
+        </div>
+    </header>
+
+    <main>
+        <aside class="sidebar">
+            <ul>
+                <li><a href="events.html">Upcoming Events</a></li>
+                <li><a href="store-info.html">Store Info</a></li>
+            </ul>
+        </aside>
+
+        <section class="album-details">
+            <img id="album-cover" src="" alt="Album Cover">
+            <h2 id="album-name">Album Name</h2>
+            <p id="album-artist">Artist Name</p>
+            <p id="album-description">Description: </p>
+            <p id="album-price">Price: </p>
+            <button>Add to Cart</button>
+            <button>Reviews</button>
+            <a id="artist-link" href="#" target="_blank"><button>More about Album</button></a>
+            <button>Format of Media</button>
+        </section>
+
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Progressive Chords | Last Updated: <span id="lastUpdated"></span></p>
+    </footer>
+
+    <script>
+        window.onload = function() {
+        const params = new URLSearchParams(window.location.search);
+        const albumName = params.get('name');
+        const albumArtist = params.get('artist');
+        const albumDescription = params.get('description');
+        const albumImage = params.get('image');
+        const albumPrice = params.get('price');
+        
+
+       
+        document.getElementById('album-cover').src = albumImage;
+        document.getElementById('album-cover').alt = albumName;
+        document.getElementById('album-name').textContent = albumName;
+        document.getElementById('album-artist').textContent = `Artist: ${albumArtist}`;
+        document.getElementById('album-description').textContent = `Description: ${albumDescription}`;
+        document.getElementById('album-price').textContent = `Price: $${albumPrice}`;
+        const formattedAlbum = albumName ? albumName.replace(/ /g, "_") : "";
+        document.getElementById('artist-link').href = `https://en.wikipedia.org/wiki/${formattedAlbum}`;
+
+        console.log('Wikipedia URL:', `https://en.wikipedia.org/wiki/${formattedAlbum}`);  // to ensure wiki link is right
+        console.log(albumImage);  // to ensure img link is right
+       
+        
+    
+        document.body.style.backgroundImage = `url('${albumImage}')`; // Set the background
+        document.body.style.opacity = 50; 
+
+   
+
+
+        document.getElementById('lastUpdated').textContent = document.lastModified;
+     
+        }
+    </script>
+</body>
+</html>
