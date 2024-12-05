@@ -61,9 +61,9 @@ h1 {
     background-color: #2e3b4e;
 }
 
-/* Layout */
+
 main {
-    display: flex;
+    
     margin: 20px;
     justify-content: space-between;
 }
