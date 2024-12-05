@@ -100,11 +100,6 @@ main {
     width: 75%;
 }
 
-.sorting {
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-}
 
 .sorting label {
     margin-right: 10px;
