@@ -10,8 +10,6 @@ a img {
 
 a img:hover {
     transform: scale(1.10);
-    
-
 }
 
 body {
@@ -64,10 +62,6 @@ h1 {
 
 
 main {
-<<<<<<< Updated upstream
-    
-=======
->>>>>>> Stashed changes
     margin: 20px;
     justify-content: space-between;
 }
@@ -144,6 +138,7 @@ main {
 
 /* Footer */
 footer {
+    background-image: url("TH_-_Mosh_Pit_(5370150223).jpg");
     background-color: #2e3b4e;
     color: white;
     text-align: center;
