@@ -19,14 +19,15 @@
             </ul>
         </nav>
         <div class="header-right">
-            <button>Cart</button>
-            <button>Account</button>
+            <a href="cart.html"><button class="cart-btn">Cart</button></a>
+            <a href="account.html"><button class="account-btn">Account</button></a>   
         </div>
     </header>
 
     <main class="account-page">
         <aside class="sidebar">
             <ul>
+                <li><a href="home.html">Home</a></li>
                 <li><a href="events.html">Upcoming Events</a></li>
                 <li><a href="storeInfo.html">Store Info</a></li>
             </ul>
@@ -40,7 +41,7 @@
             <th><h2>Your Account</h2></th>
             </tr>
             <tr>
-                <td>
+                <td rowspan="2">
                 <form>
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" value="----">
@@ -100,4 +101,8 @@
 </style>
 
 </body>
+<footer style="position:absolute">
+    <p>&copy; 2024 Progressive Chords | Last Updated: <span id="lastUpdated"></span></p>
+    <a href="#top" class="back-to-top" id="backToTopBtn">Back to Top</a>
+</footer>
 </html>

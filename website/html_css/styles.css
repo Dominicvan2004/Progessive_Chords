@@ -1,82 +1,64 @@
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-a img {
-    transition: transform 0.5s ease, box-shadow 0.3s ease;
-}
 
-a img:hover {
-    transform: scale(1.05);
-}
 
 body {
     font-family: Arial, sans-serif;
+    line-height: 1.5;
     background-color: #f4f4f4;
 }
 
-header {
+.header {
     background-image: url("TH_-_Mosh_Pit_(5370150223).jpg");
-    background-color: #2e3b4e;
-    color: white;
-    padding: 15px 30px;
-  
-    justify-content: space-between;
-    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    overflow: hidden; /* Clearfix for floated children */
 }
 
-h1 {
-    margin: 0;
+.header h1 {
+    float: left;
 }
 
-.nav ul {
+.header .nav {
+    float: left;
+    margin-left: 20px;
+}
+
+.header .nav ul {
     list-style: none;
     padding: 0;
-    margin: 0;
-
 }
 
-.nav li {
-    margin-right: 20px;
+.header .nav ul li {
+    display: inline;
+    margin-right: 15px;
 }
 
-.nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+.header .header-right {
+    float: right;
 }
 
-.header-right button {
-    background-color: black;
+.header button {
+    background-color: #555;
     color: white;
     border: none;
-    padding: 10px;
+    padding: 5px 10px;
     cursor: pointer;
 }
 
-.header-right button:hover {
-    background-color: #2e3b4e;
-}
-
-
-main {
-    margin: 20px;
-    justify-content: space-between;
+.header button:hover {
+    background-color: #777;
 }
 
 .sidebar {
     width: 20%;
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.sidebar h2 {
-    margin-bottom: 15px;
-    font-size: 18px;
+    float: left;
+    background-color: #ddd;
+    padding: 10px;
 }
 
 .sidebar ul {
@@ -84,74 +66,72 @@ main {
     padding: 0;
 }
 
-.sidebar li {
+.sidebar ul li {
     margin-bottom: 10px;
-}
-
-.sidebar a {
-    text-decoration: none;
-    color: #333;
 }
 
 
 .main-content {
-   margin-left: 20%;
-    overflow: hidden;
+    margin-left: 20%;
+    overflow: hidden; 
     padding: 10px;
 }
 
-
-.sorting label {
-    margin-right: 10px;
-    font-size: 16px;
-}
-
-.sorting select {
-    padding: 5px;
-    font-size: 14px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
 .catalog-grid {
     margin-top: 10px;
     width: 100%;
 }
 
 .album-card {
-    background-color: white;
-    width: 30%;
+    width: 30%; 
     float: left;
-    padding: 10px;
     margin: 0 1.5% 20px 1.5%;
-    border-radius: 5px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
     text-align: center;
 }
 
 .album-card img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
-    border-radius: 5px;
+    margin-bottom: 10px;
     transition: transform 0.5s ease, box-shadow 0.3s ease;
+}
 
+.album-card img:hover {
+    transform: scale(1.05);
 }
 
 .album-card p {
-    margin-top: 10px;
-    font-size: 16px;
+    margin: 5px 0;
 }
 
-/* Footer */
+.album-card button {
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.album-card button:hover {
+    background-color: #005f7a;
+}
+
+
 footer {
     background-image: url("TH_-_Mosh_Pit_(5370150223).jpg");
-    background-color: #2e3b4e;
+    background-color: #333;
     color: white;
     text-align: center;
-    padding: 20px 0;
-    position: fixed;
-    width: 100%;
+    position: sticky;
     bottom: 0;
+    min-width: 100%;
+    padding: 1em;
+    
 }
+
 
 table, td, th{
     border-collapse: collapse;
@@ -167,6 +147,11 @@ td {
   margin-right: auto;
 }
 
+.table-single-large{
+    margin-left: auto;
+  margin-right: auto;
+}
+
 .cart {
     margin-left: auto;
     margin-right: auto;
@@ -175,3 +160,4 @@ td {
 .cart-header{
     width: 100px;
 }
+

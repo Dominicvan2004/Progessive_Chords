@@ -16,19 +16,24 @@
             </ul>
         </nav>
         <div class="header-right">
-            <button>Cart</button>
-            <button>Account</button>
+            <a href="cart.html"><button class="cart-btn">Cart</button></a>
+            <a href="account.html"><button class="account-btn">Account</button></a>
         </div>
     </header>
     <main>
         <aside class="sidebar">
             <ul>
+                <li><a href="home.html">Home</a></li>
                 <li><a href="#events">Upcoming Events</a></li>
                 <li><a href="#storeInfo">Store Info</a></li>
             </ul>
         </aside>
-        <section class="cart">
-            <h2>Your Cart</h2>
+        <table class = "table-single">
+        <tr>
+            <th><h2>Your Cart</h2></th>
+        </tr>
+        <tr>
+        <td>
             <div class="cart-album-card">
  
                     <img src="C:\Users\T00693932\Downloads\Kendrick Lamar - GNX, Cover art.webp"alt="GNX">
@@ -47,7 +52,13 @@
             <p>Total: $29.99</p>
 
             <button>Checkout</button>
-        </section>
+        </td>
+        </tr>
+        </table>
     </main>
 </body>
+<footer style="position:absolute">
+    <p>&copy; 2024 Progressive Chords | Last Updated: <span id="lastUpdated"></span></p>
+    <a href="#top" class="back-to-top" id="backToTopBtn">Back to Top</a>
+</footer>
 </html>
