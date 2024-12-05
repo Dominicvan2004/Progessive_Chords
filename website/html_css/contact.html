@@ -1,5 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progressive Chords - Contact</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        
+    </style>
+</head>
+<header class="header">
+    <h1>Progressive Chords</h1>
+    <nav class="nav">
+        <ul>
+            <li><a href="events.html">Upcoming Events</a></li>
+            <li><a href="store-info.html">Store Info</a></li>
+        </ul>
+    </nav>
+    <div class="header-right">
+        <button>Cart</button>
+        <button>Account</button>
+    </div>
+</header>
 <section id="contact">
-    <h2>Contact Us</h2>
+    <h1>Contact Us</h1>
     <form id="contact-form">
         
         <label for="name">Name:</label>
@@ -14,11 +38,8 @@
         <textarea id="message" name="message" required placeholder="Enter your message"></textarea>
         
        
-        <label for="subscribe">Subscribe to Newsletter:</label>
-        <input type="checkbox" id="subscribe" name="subscribe">
-        
-        
-        
+        <label for="agreeTerms">I agree to the terms and conditions</label>
+        <input type="checkbox" id="agreeTerms" name="agreeTerms" required> 
 
         <label for="age">Age:</label>
         <input type="number" id="age" name="age" min="18" max="100" required value="25">
@@ -36,11 +57,11 @@
     document.getElementById("contact-form").addEventListener("submit", function(event) {
         let valid = true;
 
-        const name = document.getElementById("name").value;
-        const email = document.getElementById("email").value;
-        const message = document.getElementById("message").value;
-        const age = document.getElementById("age").value;
-        const dob = document.getElementById("dob").value;
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var message = document.getElementById("message").value;
+        var age = document.getElementById("age").value;
+        var dob = document.getElementById("dob").value;
 
         
         if (name === "") {
@@ -48,7 +69,7 @@
             valid = false;
         }
 
-        const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
         if (!emailPattern.test(email)) {
             alert("Please enter a valid email address.");
             valid = false;
@@ -64,8 +85,8 @@
             valid = false;
         }
 
-        const today = new Date();
-        const dobDate = new Date(dob);
+        var today = new Date();
+        var dobDate = new Date(dob);
         if (dobDate >= today) {
             alert("Date of birth must be in the past");
             valid = false;
@@ -105,9 +126,5 @@
         box-sizing: border-box;
     }
 
-    .button {
-        background-color: #008CBA; 
-        color: white;
-       
-    }
+   
 </style>
