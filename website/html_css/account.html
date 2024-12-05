@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Progressive Chords - Account</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        
+    </style>
 </head>
 <body>
     <header class="header">
@@ -20,6 +23,7 @@
             <button>Account</button>
         </div>
     </header>
+
     <main class="account-page">
         <aside class="sidebar">
             <ul>
@@ -28,28 +32,78 @@
             </ul>
         </aside>
         <section class="account-details">
-            <table>
-            <tr>
-            <th><h2>Your Account</h2></th>
-            </tr>
-            <tr>
-            <td><form>
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" value="----">
-                <br>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" value="---@---.com">
-                <br>
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password">
-                <br>
-                <button type="submit">Update Account</button>
-            </form>
+            <h2>Your Account</h2>
+            <div class="form-container">
+                <form id="accountForm" action="#" method="post">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    
+                    
+                    <label for="agreeTerms">I agree to the terms and conditions</label>
+                    <input type="checkbox" id="agreeTerms" name="agreeTerms" required> 
+                    
+                    <label for="birthdate">Birthdate:</label>
+                    <input type="date" id="birthdate" name="birthdate">
+                    
+                    
+                    <button type="submit">Update Account</button>
+                    <button type="reset">Reset</button>
+                </form>
+            </div>
             <button class="logout">Log Out</button>
-            </td>
-            </tr>
-        </table>
+        </section>
+
+        
+        <section class="submitted-info" id="submittedInfoSection">
+            
         </section>
     </main>
+
+    <script>
+        
+        document.getElementById('accountForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+            
+            var username = document.getElementById('username').value;
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            var category = document.getElementById('category').value;
+            var quantity = document.getElementById('quantity').value;
+            var birthdate = document.getElementById('birthdate').value;
+
+            
+            document.getElementById('submittedInfoSection').innerHTML = displayMessage;
+        });
+    </script>
+<style>
+   
+    input:focus:invalid,
+    textarea:focus:invalid {
+        border-color: red; 
+    }
+
+    input:focus:valid,
+    textarea:focus:valid {
+        border-color: green;  
+    }
+
+    input,
+    select,
+    textarea {
+       
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+  
+</style>
+
 </body>
 </html>
