@@ -1,28 +1,113 @@
 <section id="contact">
     <h2>Contact Us</h2>
     <form id="contact-form">
+        
         <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
+        <input type="text" id="name" name="name" required placeholder="Enter your name">
+        
         
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email" required placeholder="Enter your email">
         
+       
         <label for="message">Message:</label>
-        <textarea id="message" name="message" required></textarea>
+        <textarea id="message" name="message" required placeholder="Enter your message"></textarea>
+        
+       
+        <label for="subscribe">Subscribe to Newsletter:</label>
+        <input type="checkbox" id="subscribe" name="subscribe">
+        
+        
+        
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min="18" max="100" required value="25">
+        
+       
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+        
         
         <button type="submit" class="button">Submit</button>
+        <button type="reset" class="button">Reset</button>
     </form>
 </section>
-
 <script>
     document.getElementById("contact-form").addEventListener("submit", function(event) {
+        let valid = true;
+
         const name = document.getElementById("name").value;
         const email = document.getElementById("email").value;
         const message = document.getElementById("message").value;
+        const age = document.getElementById("age").value;
+        const dob = document.getElementById("dob").value;
 
-        if (name === "" || email === "" || message === "") {
-            alert("All fields are required.");
+        
+        if (name === "") {
+            alert("Name is required.");
+            valid = false;
+        }
+
+        const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        if (!emailPattern.test(email)) {
+            alert("Please enter a valid email address.");
+            valid = false;
+        }
+
+        if (message === "") {
+            alert("Message cannot be empty.");
+            valid = false;
+        }
+
+        if (age < 18 || age > 100) {
+            alert("Please enter a valid age between 18 and 100.");
+            valid = false;
+        }
+
+        const today = new Date();
+        const dobDate = new Date(dob);
+        if (dobDate >= today) {
+            alert("Date of birth must be in the past");
+            valid = false;
+        }
+
+        if (!valid) {
             event.preventDefault();
+        } else {
+            
+            alert("Form submitted successfully!");
+
+            
+            event.target.reset();
         }
     });
 </script>
+
+
+<style>
+   
+    input:focus:invalid,
+    textarea:focus:invalid {
+        border-color: red; 
+    }
+
+    input:focus:valid,
+    textarea:focus:valid {
+        border-color: green;  
+    }
+
+    
+    input,
+    select,
+    textarea {
+       
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .button {
+        background-color: #008CBA; 
+        color: white;
+       
+    }
+</style>
