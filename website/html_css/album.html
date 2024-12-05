@@ -12,7 +12,7 @@
         <nav class="nav">
             <ul>
                 <li><a href="events.html">Upcoming Events</a></li>
-                <li><a href="store-info.html">Store Info</a></li>
+                <li><a href="storeInfo.html">Store Info</a></li>
             </ul>
         </nav>
         <div class="header-right">
@@ -25,42 +25,27 @@
         <aside class="sidebar">
             <ul>
                 <li><a href="events.html">Upcoming Events</a></li>
-                <li><a href="store-info.html">Store Info</a></li>
+                <li><a href="storeInfo.html">Store Info</a></li>
             </ul>
         </aside>
 
-        <section class="album-details">
             <table class="table-single">
                 <tr>
                     <th><h2 id="album-name">Album Name</h2></th>
                 </tr>
                 <tr>
-                    <td><img id="album-cover" src="" alt="Album Cover"></td>
-                </tr>
-            
-                <tr>
-                    <td id="album-artist">Artist Name</td>
-                </tr>
-                <tr>
-                    <td id="album-description">Description: </td>
-                </tr>
-                <tr>
-                    <td id="album-price">Price: </td>
-                </tr>
-                <tr>
-                    <td><button>Add to Cart</button></td>
-                </tr>
-                <tr>
-                    <td><button>Reviews</button></td>
-                </tr>
-                <tr>
-                    <td><a id="artist-link" href="#" target="_blank"><button>More about Album</button></a></td>
-                </tr>
-                <tr>
-                    <td><button>Format of Media</button></td>
+                    <td>
+                    <p><img id="album-cover" src="" alt="Album Cover"></p>
+                    <p id="album-artist">Artist Name</p>
+                    <p id="album-description">Description: </p>
+                    <p id="album-price">Price:</p>
+                    <button>Add to Cart</button>
+                    <button>Reviews</button>
+                    <a id="artist-link" href="#" target="_blank"><button>More about Album</button></a>
+                    <button>Format of Media</button>
+                </td>
                 </tr>
             </table>
-        </section>
 
     </main>
 
@@ -89,8 +74,6 @@
             console.log('Wikipedia URL:', `https://en.wikipedia.org/wiki/${formattedAlbum}`);  // to ensure wiki link is right
             console.log(albumImage);  // to ensure img link is right
 
-            document.body.style.backgroundImage = `url('${albumImage}')`; // Set the background
-            document.body.style.opacity = 50; 
 
             document.getElementById('lastUpdated').textContent = document.lastModified;
         }

@@ -20,6 +20,7 @@ body {
 }
 
 header {
+    background-image: url("TH_-_Mosh_Pit_(5370150223).jpg");
     background-color: #2e3b4e;
     color: white;
     padding: 15px 30px;
@@ -63,7 +64,10 @@ h1 {
 
 
 main {
+<<<<<<< Updated upstream
     
+=======
+>>>>>>> Stashed changes
     margin: 20px;
     justify-content: space-between;
 }
